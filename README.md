@@ -4,10 +4,16 @@ L'objectif du ballon sonde captif est de mettre à disposition des citoyes une i
 ## Diagramme de Gantt
 Le diagramme de Gantt peut être édité facilement à l'aide du logiciel [GanttProject](https://www.ganttproject.biz/).
 
+## Sites
+* [Conrad](https://www.conrad.fr/)
+* [Lextronic](https://www.lextronic.fr/)
+* [Gotronic](https://www.gotronic.fr/)
+* [Radiospare](https://fr.rs-online.com/web/)
+* [Farnell](https://fr.farnell.com/)
+
 ## Composants
 
 Fonction | Modèle
 --- | ---
 Microcontrolleur | Arduino
 Ecran | -
-- | -
