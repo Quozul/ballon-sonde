@@ -24,8 +24,8 @@ Quantité | Fonction | Modèle | Site
 1| Capteur Soufre| Figaro 183466 | Conrad
 1| Capteur Soufre| Respiratory Irritant Sensor 20 ppm11 | Spec-sensors
 1| Capteur Humidité| Module température Grove | Gotronic
-0| Capteur Pression Atmosphérique| "" | 
-0| Capteur Température| "" | 
+0| Capteur Pression Atmosphérique| "" | ❎
+0| Capteur Température| "" | ❎
 1| Capteur Vitesse vent| GRLEX003 |  Lextronic
 1| Capteur Proximté/mouvement| MIKROE-2677 | Lextronic
 20| Piles | 6170789 | RadioSpare
