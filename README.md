@@ -14,7 +14,7 @@ Le diagramme de Gantt peut être édité facilement à l'aide du logiciel [Gantt
 ## Composants
 
 Quantité | Fonction | Modèle | Site
---- | ---
+--- | --- | --- | ---
 2| Microcontrolleur | Arduino ATMega 2560|  Gotronic
 2| Shield | Shield Grove MEGA | Gotronic
 1| Ecran  | FeatherWings ADA3651 | Gotronic
