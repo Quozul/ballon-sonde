@@ -28,8 +28,12 @@ Quantité | Fonction | Modèle | Site
 0| Capteur Température| "" | ❎
 1| Capteur Vitesse vent| GRLEX003 |  Lextronic
 1| Capteur Proximté/mouvement| MIKROE-2677 | Lextronic
-20| Piles | 6170789 | RadioSpare
+2| Piles | 617-0773 | RadioSpare
 2| Modules WI-FI | 113990080 | Gotronic
 1| Câble Noir | 6710 BK005 | Farnell
 1| Câble Rouge | 6710 RD005 | Farnell
 1| Cable Grove, Steam, Twig | 1793715 | Radiospare 
+4| Platine d'essai | 102-9147 |Radiospare
+1| Résistances | 156-2571 | Radiospare
+1| Chargeur de batterie | 2402242 | Farnell
+1| Platine Capteur Météo | DEV-LEX | Lextronic
