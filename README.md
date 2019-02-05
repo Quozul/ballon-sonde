@@ -16,14 +16,14 @@ Le diagramme de Gantt peut être édité facilement à l'aide du logiciel [Gantt
 Quantité | Fonction | Modèle | Site
 --- | --- | --- | ---
 2| Microcontrolleur | Arduino ATMega 2560|  Gotronic
-2| Shield | Shield Grove MEGA | Gotronic
-1| Ecran  | FeatherWings ADA3651 | Gotronic
+2| Shield | 103020027 | Gotronic
+1| Ecran  | 104030004 | Gotronic
 1| Capteur Particules fines| SDS011 | Gotronic
-1| Capteur Ozone| Carte Click Détectieur d'ozone v2 | Farnell
-1| Capteur Azote| Capteur de gaz Grove 101020088 | Gotronic
+1| Capteur Ozone| 2858069 | Farnell
+1| Capteur Azote| 101020088 | Gotronic
 1| Capteur Soufre| Figaro 183466 | Conrad
-1| Capteur Soufre| Respiratory Irritant Sensor 20 ppm11 | Spec-sensors
-1| Capteur Humidité| Module température Grove | Gotronic
+1| Capteur Soufre| 110-901 | Spec-sensors
+1| Capteur Humidité| 101020193 | Gotronic
 0| Capteur Pression Atmosphérique| "" | ❎
 0| Capteur Température| "" | ❎
 1| Capteur Vitesse vent| GRLEX003 |  Lextronic
