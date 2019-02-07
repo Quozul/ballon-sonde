@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Ballon sonde captif" company="" webLink="http://" view-date="2018-12-01" view-index="0" gantt-divider-location="510" resource-divider-location="300" version="2.8.9" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:8" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="153" order="0"/>
+        <field id="tpd4" name="Date de début" width="117" order="1"/>
+        <field id="tpd5" name="Date de fin" width="118" order="2"/>
+        <field id="tpc0" name="Responsable" width="118" order="3"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="148" order="0"/>
+        <field id="1" name="Rôle par défaut" width="148" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="1" tue="0" wed="1" thu="0" fri="1" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="1" date="1" type="HOLIDAY"/>
+        <date year="" month="5" date="1" type="HOLIDAY"/>
+        <date year="" month="5" date="8" type="HOLIDAY"/>
+        <date year="" month="7" date="14" type="HOLIDAY"/>
+        <date year="" month="8" date="15" type="HOLIDAY"/>
+        <date year="" month="11" date="1" type="HOLIDAY"/>
+        <date year="" month="11" date="11" type="HOLIDAY"/>
+        <date year="" month="12" date="25" type="HOLIDAY"/>
+        <date year="2012" month="1" date="2" type="HOLIDAY"/>
+        <date year="2012" month="4" date="9" type="HOLIDAY"/>
+        <date year="2012" month="5" date="17" type="HOLIDAY"/>
+        <date year="2012" month="5" date="28" type="HOLIDAY"/>
+        <date year="2012" month="11" date="12" type="HOLIDAY"/>
+        <date year="2005" month="3" date="28" type="HOLIDAY"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+            <taskproperty id="tpc0" name="Responsable" type="custom" valuetype="text"/>
+        </taskproperties>
+        <task id="96" name="Analyse du besoin" color="#000000" meeting="false" start="2018-12-20" duration="7" complete="0" expand="true">
+            <depend id="36" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="36" name="Conception préliminaire" color="#000000" meeting="false" start="2019-01-22" duration="5" complete="0" expand="true">
+            <depend id="102" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="102" name="Réalisation de la maquette et du prototype" color="#000000" meeting="false" start="2019-02-07" duration="32" complete="0" expand="true">
+            <depend id="174" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="174" name="Préparation et soutenance orale" color="#000000" meeting="false" start="2019-05-30" duration="2" complete="0" expand="true"/>
+        <task id="97" name="Mis en place du projet" color="#336600" meeting="false" start="2018-12-20" duration="7" complete="0" expand="true">
+            <depend id="100" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="100" name="Collection d'idées" color="#336600" meeting="false" start="2019-01-22" duration="5" complete="0" expand="true">
+            <depend id="0" type="2" difference="0" hardness="Strong"/>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+            <depend id="25" type="2" difference="0" hardness="Strong"/>
+            <depend id="37" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="0" name="Acquisition de la vitesse du vent" color="#ff33ff" meeting="false" start="2019-02-07" duration="8" complete="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Kilian"/>
+        </task>
+        <task id="2" name="Franchissement du périmètre de sécurité" color="#ff33ff" meeting="false" start="2019-03-07" duration="8" complete="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Kilian"/>
+        </task>
+        <task id="3" name="Mise en sécurité du ballon" color="#ff33ff" meeting="false" start="2019-04-04" duration="6" complete="0" expand="true">
+            <depend id="41" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Kilian"/>
+        </task>
+        <task id="4" name="Acquisition des particules fines" color="#0099cc" meeting="false" start="2019-02-07" duration="8" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Christophe"/>
+        </task>
+        <task id="5" name="Acquisition des particules d'ozone dans l'atmosphère" color="#0099cc" meeting="false" start="2019-03-07" duration="8" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="Christophe"/>
+        </task>
+        <task id="8" name="Acquisition du taux de dioxyde de soufre" color="#ff3300" meeting="false" start="2019-02-28" duration="8" complete="0" expand="true">
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Keysan"/>
+        </task>
+        <task id="10" name="Acquisition du taux de dioxyde de azote" color="#ff3300" meeting="false" start="2019-03-28" duration="8" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="Keysan"/>
+        </task>
+        <task id="25" name="Ecran" color="#000066" meeting="false" start="2019-02-07" duration="6" complete="0" thirdDate="2019-02-07" thirdDate-constraint="0" expand="true">
+            <depend id="8" type="2" difference="0" hardness="Strong"/>
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Nicolas, Keysan"/>
+        </task>
+        <task id="41" name="Finalisation de l'écran" color="#000066" meeting="false" start="2019-04-25" duration="8" complete="0" thirdDate="2019-04-25" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="Kilian, Erwan"/>
+        </task>
+        <task id="18" name="Acquisition de la température" color="#33ccff" meeting="false" start="2019-02-28" duration="8" complete="0" expand="true">
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Nicolas"/>
+        </task>
+        <task id="21" name="Acquisition de la pression" color="#33ccff" meeting="false" start="2019-03-28" duration="8" complete="0" expand="true">
+            <depend id="23" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Nicolas"/>
+        </task>
+        <task id="23" name="Acquisition de l'humidité" color="#33ccff" meeting="false" start="2019-04-25" duration="8" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc0" value="Nicolas"/>
+        </task>
+        <task id="37" name="Autonomie de la batterie" color="#ccff33" meeting="false" start="2019-02-07" duration="7" complete="0" expand="true">
+            <depend id="40" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Erwan"/>
+        </task>
+        <task id="40" name="Montée/descente" color="#ccff33" meeting="false" start="2019-03-05" duration="7" complete="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="38" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Erwan"/>
+        </task>
+        <task id="38" name="Horaires de montée/descente" color="#ccff33" meeting="false" start="2019-03-28" duration="3" complete="0" expand="true">
+            <depend id="39" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Erwan"/>
+        </task>
+        <task id="39" name="Recharge" color="#ccff33" meeting="false" start="2019-04-09" duration="5" complete="0" expand="true">
+            <depend id="41" type="2" difference="0" hardness="Strong"/>
+            <customproperty taskproperty-id="tpc0" value="Erwan"/>
+        </task>
+        <task id="176" name="Réalisation du PowerPoint" color="#336600" meeting="false" start="2019-05-30" duration="2" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Kilian" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="1" name="Christophe" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="Keysan" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="3" name="Nicolas" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="4" name="Erwan" function="SoftwareDevelopment:2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="3" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="41" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="2" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="4" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="5" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="8" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="10" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="25" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
+        <allocation task-id="25" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="18" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="21" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="23" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
+        <allocation task-id="37" resource-id="4" function="Default:1" responsible="true" load="1.0"/>
+        <allocation task-id="40" resource-id="4" function="Default:1" responsible="true" load="1.0"/>
+        <allocation task-id="38" resource-id="4" function="Default:1" responsible="true" load="1.0"/>
+        <allocation task-id="39" resource-id="4" function="Default:1" responsible="true" load="1.0"/>
+        <allocation task-id="41" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name="Killian (Eleve 1)"/>
+        <role id="2" name="Christophe (Eleve 2)"/>
+        <role id="3" name="Keysan (Eleve 3)"/>
+        <role id="4" name="Nicolas (Eleve 4)"/>
+        <role id="5" name="Erwan (Eleve 5)"/>
+    </roles>
+</project>
