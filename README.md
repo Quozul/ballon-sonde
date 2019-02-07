@@ -1,5 +1,7 @@
-# Ballon sonde
-L'objectif du ballon sonde captif est de mettre à disposition des citoyens une information sur la qualité de l'air tout en permettant aux citoyens de bénéficier d'informations supplémentaires sur le climat actuel telles que la température, la pression et l'humidité. Le ballon doit être autonome en énergie et ne s'élèvera pas au-dessus de 10 mètres d'altitude.
+## Le GitHub
+Les documents sont disponibles dans la branche [Documents](https://github.com/Quozul/ballon-sonde/tree/Documents)
+Le code devra être publié dans la branche [master](https://github.com/Quozul/ballon-sonde/tree/master)
+Plus d'informations sur les pages du [wiki](https://github.com/Quozul/ballon-sonde/wiki)
 
 ## Diagramme de Gantt
 Le diagramme de Gantt peut être édité facilement à l'aide du logiciel [GanttProject](https://www.ganttproject.biz/).
