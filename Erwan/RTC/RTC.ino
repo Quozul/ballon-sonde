@@ -6,35 +6,95 @@ DS1307 clock; // créer l'horloge
 float t = 24.7525; // temps restant en h
 long int reset;
 
-const float R1 = 100.0; // valeur de la première résistance
-const float R2 = 500.0; // valeur de la seconde résistance
-const float a = 2.850; // autonomie totale des piles en Ah
+const float R1 = 300.0; // valeur de la première résistance
+const float R2 = 180.0; // valeur de la seconde résistance
+const float a = 2.500 + 2.100 + 2.100 + 2.500 + 2.000 + 2.100; // autonomie totale des piles en Ah
 
 const float coeff = R2 / ( R1 + R2); // calcul du coefficient de réduction
 const float req = (R1 * R2) / ( R1 + R2 ); // calcul de la résistance équivalente
 const float res = 5 / 1024; // calcul la résolution de la borne analogique (V / unité)
 
-const float tensionMax = 6.0; // tension maximale en V
-const float tensionMin = 5.5; // défini la tension minimale en V
+const float tensionMax = 7.2; // tension maximale en V
+const float tensionMin = 6.0; // défini la tension minimale en V
 
 const int treuilPin = 2; // broche pour activer le treuil
 
 void setup() {
     Serial.begin(9600);
     clock.begin();
-    clock.fillByYMD(2019,3,26); // change la date (année, mois, numéro)
-    clock.fillByHMS(9,20,0); // change l'heure (h,m,s)
-    clock.fillDayOfWeek(THU); // change le jour
+    clock.fillByYMD(2019,3,28); // change la date (année, mois, numéro)
+    clock.fillByHMS(17,0,0); // change l'heure (h,m,s)
+    clock.fillDayOfWeek(TUE); // change le jour
     clock.setTime();
 }
 
-unsigned long getclockinseconds() {
+int daysinmonth(int mo) {
+  switch (mo) {
+    case 1:
+      return 31;
+    case 2:
+      return 30;
+    case 3:
+      return 31;
+    case 4:
+      return 30;
+    case 5:
+      return 31;
+    case 6:
+      return 30;
+    case 7:
+      return 31;
+    case 8:
+      return 31;
+    case 9:
+      return 30;
+    case 10:
+      return 31;
+    case 11:
+      return 30;
+    case 12:
+      return 31;
+  }
+}
+
+unsigned long timestamp() {
   clock.getTime();
-  unsigned long seconds;
-  seconds += clock.second;
-  seconds += clock.minute * 60;
-  seconds += clock.hour * 3600;
+  unsigned long i0 = (unsigned long)3600 * (unsigned long)24 * daysinmonth(clock.month);
+  unsigned long i1 = (unsigned long)clock.month * i0;
+  unsigned long i2 = (unsigned long)clock.year * i0 * (unsigned long)12;
+  unsigned long seconds = (unsigned long)clock.second + (unsigned long)clock.minute*(unsigned long)60 + (unsigned long)clock.hour*(unsigned long)3600 + (unsigned long)clock.dayOfMonth*((unsigned long)3600*(unsigned long)24) + i1 + i2;
   return seconds;
+}
+
+void date(unsigned long timestamp) {
+  clock.getTime();
+
+  unsigned long annee = timestamp / ((unsigned long)12 * daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  timestamp -= annee * ((unsigned long)12 * daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  Serial.print(annee);
+  Serial.print("/");
+
+  unsigned long mois = timestamp / (daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  timestamp -= mois * (daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  Serial.print(mois);
+  Serial.print("/");
+
+  unsigned long jour = timestamp / ((unsigned long)24 * (unsigned long)3600);
+  timestamp -= jour * ((unsigned long)24 * (unsigned long)3600);
+  Serial.print(jour);
+  Serial.print(" - ");
+
+  unsigned long heure = timestamp / (unsigned long)3600;
+  timestamp -= heure * (unsigned long)3600;
+  Serial.print(heure);
+  Serial.print(":");
+
+  unsigned long mins = timestamp / (unsigned long)60;
+  timestamp -= mins * (unsigned long)60;
+  Serial.print(mins);
+  Serial.print(":");
+
+  Serial.println(timestamp);
 }
 
 const unsigned long secsindays = 3600L * 24L;
@@ -75,9 +135,15 @@ void autonomy(float t) {
 }
 
 void loop() {
-    autonomy((float)getclockinseconds() / 3600.0 + (float)battery());
-    //Serial.println(getclockinseconds(), DEC);
+    //autonomy((float)getclockinseconds() / 3600.0 + (float)battery());
+    unsigned long temps = battery() * 3600;
+    //Serial.print(temps);
+    //Serial.print(" - ");
+  if (reset > millis())
+    return;
+    date(timestamp() + temps);
     //printTime();
+  reset += 1000;
 }
 
 void recharge(float t) { // fonction qui affiche la date estimée à laquelle le ballon doit être rechargée
@@ -169,11 +235,11 @@ float battery() {
   float t = a / i; // calcul l'autonomie en h
   
   if (reset <= millis()) { // affiche des valeurs toutes les 0.5 secondes
-    Serial.println("");
+    /*Serial.println("");
     Serial.print(u, 7); // affiche la tension dans le moniteur de série avec 7 décimales
     Serial.println("V");
     Serial.print(t, 7); // affiche le temps restant avant décharge
-    Serial.println("h");
+    Serial.println("h");*/
 
     //reset = millis() + 500;
     
