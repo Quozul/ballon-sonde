@@ -22,8 +22,8 @@ const int treuilPin = 2; // broche pour activer le treuil
 void setup() {
     Serial.begin(9600);
     clock.begin(); // démarre l'horloge
-    clock.fillByYMD(2019,3,28); // change la date (année, mois, numéro)
-    clock.fillByHMS(17,0,0); // change l'heure (h,m,s)
+    clock.fillByYMD(2019,4,02); // change la date (année, mois, numéro)
+    clock.fillByHMS(8,30,0); // change l'heure (h,m,s)
     clock.fillDayOfWeek(TUE); // change le jour
     clock.setTime();
 }
@@ -48,28 +48,35 @@ unsigned long datetoseconds() { // convertis la date actuelle en secondes
   return seconds;
 }
 
-char* secondstodate(unsigned long seconds) { // convertis la date donnée (en seconde) en date
+void secondstodate(unsigned long seconds) { // convertis la date donnée (en seconde) en date
   clock.getTime();
 
   unsigned long annee = seconds / ((unsigned long)12 * daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
   seconds -= annee * ((unsigned long)12 * daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  Serial.print(annee);
+  Serial.print("/");
 
   unsigned long mois = seconds / (daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
   seconds -= mois * (daysinmonth(clock.month) * (unsigned long)24 * (unsigned long)3600);
+  Serial.print(mois);
+  Serial.print("/");
 
   unsigned long jour = seconds / ((unsigned long)24 * (unsigned long)3600);
   seconds -= jour * ((unsigned long)24 * (unsigned long)3600);
+  Serial.print(jour);
+  Serial.print(" - ");
 
   unsigned long heure = seconds / (unsigned long)3600;
   seconds -= heure * (unsigned long)3600;
+  Serial.print(heure);
+  Serial.print(":");
 
   unsigned long mins = seconds / (unsigned long)60;
   seconds -= mins * (unsigned long)60;
+  Serial.print(mins);
+  Serial.print(":");
 
-  char buf[12];
-  sprintf(buf, "20%u/%02u/%02u %02u:%02u:%02u", annee, mois, jour, heure, mins, seconds);
-
-  return buf;
+  Serial.println(seconds);
 }
 
 void loop() {
@@ -80,23 +87,11 @@ void loop() {
   
   if (reset > millis()) return; // le code qui suit cette ligne ne va s'exécuter que tout les secondes
 
-  char rechargedate[12];
-  rechargedate = secondstodate(datetoseconds() + temps);
+  secondstodate(datetoseconds() + temps);
+  float per = (u - tensionMin) / (tensionMax - tensionMin) * 100;
+  Serial.print(" ");
+  Serial.print(per, DEC);
+  Serial.println("%");
   
   reset += 1000;
 }
-
-/*float battery() {
-  float rawcurr = analogRead(A1); // récupère la tension brute
-  float u = rawcurr * (float)5 / 1024 / coeff; // calcul la tension réelle
-  float i = u / req; // calcul l'intensité en A (u=ri)
-  float t = Q / i; // calcul l'autonomie en h
-  
-  if (u < tensionMin) {
-    digitalWrite(treuilPin, HIGH);
-  } else {
-    digitalWrite(treuilPin, LOW);
-  }
-
-  return t;
-}*/
