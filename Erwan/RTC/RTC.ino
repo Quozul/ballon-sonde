@@ -22,8 +22,8 @@ const int treuilPin = 2; // broche pour activer le treuil
 void setup() {
     Serial.begin(9600);
     clock.begin();
-    clock.fillByYMD(2019,3,28); // change la date (année, mois, numéro)
-    clock.fillByHMS(17,0,0); // change l'heure (h,m,s)
+    clock.fillByYMD(2019,4,2); // change la date (année, mois, numéro)
+    clock.fillByHMS(8,30,0); // change l'heure (h,m,s)
     clock.fillDayOfWeek(TUE); // change le jour
     clock.setTime();
 }
