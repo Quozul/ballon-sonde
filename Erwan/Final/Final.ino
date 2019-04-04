@@ -23,7 +23,7 @@ void setup() {
     Serial.begin(9600);
     clock.begin(); // démarre l'horloge
     clock.fillByYMD(2019,4,02); // change la date (année, mois, numéro)
-    clock.fillByHMS(8,30,0); // change l'heure (h,m,s)
+    clock.fillByHMS(11,00,0); // change l'heure (h,m,s)
     clock.fillDayOfWeek(TUE); // change le jour
     clock.setTime();
 }
@@ -89,8 +89,7 @@ void loop() {
 
   secondstodate(datetoseconds() + temps);
   float per = (u - tensionMin) / (tensionMax - tensionMin) * 100;
-  Serial.print(" ");
-  Serial.print(per, DEC);
+  Serial.print(per, 2);
   Serial.println("%");
   
   reset += 1000;
