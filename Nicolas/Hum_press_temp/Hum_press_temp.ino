@@ -70,8 +70,6 @@ float mark[3]= {bme680.sensor_result_value.temperature, bme680.sensor_result_val
 
     
     if (1 == 1){
-
-      Tft.drawString ("26/03 10:46  25%",0,5,2,RED);
       
       Tft.drawString("Temperature =>",0,25,2,RED);  // draw char: 'S', (0, 0), size: 1, color: RED
       

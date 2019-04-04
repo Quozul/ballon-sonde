@@ -31,7 +31,7 @@ long int reset;
 
 const float R1 = 300.0; // valeur de la première résistance
 const float R2 = 180.0; // valeur de la seconde résistance
-const float Q = 2.500 + 2.100 + 2.100 + 2.500 + 2.000 + 2.100; // capacité totale des piles en Ah
+const float Q = (2.500 + 2.100 + 2.100 + 2.500 + 2.000 + 2.100) / 6; // capacité totale des piles en Ah
 
 const float coeff = R2 / ( R1 + R2); // calcul du coefficient de réduction
 const float req = (R1 * R2) / ( R1 + R2 ); // calcul de la résistance équivalente
@@ -79,8 +79,8 @@ digitalWrite(yellow,HIGH);**/
     // rtc
     Serial.begin(9600);
     clock.begin(); // démarre l'horloge
-    clock.fillByYMD(2019,4,02); // change la date (année, mois, numéro)
-    clock.fillByHMS(8,30,0); // change l'heure (h,m,s)
+    clock.fillByYMD(2019,4,4); // change la date (année, mois, numéro)
+    clock.fillByHMS(16,20,0); // change l'heure (h,m,s)
     clock.fillDayOfWeek(TUE); // change le jour
     clock.setTime();
     pinMode(treuilPin, OUTPUT);
@@ -234,7 +234,7 @@ float mark[6]= {bme680.sensor_result_value.temperature, bme680.sensor_result_val
     //if (reset > millis()) return; // le code qui suit cette ligne ne va s'exécuter que tout les secondes
     secondstodate(datetoseconds() + temps);
 
-    float per = min((u - tensionMin) / (tensionMax - tensionMin) * 100, 100);
+    float per = max(min((u - tensionMin) / (tensionMax - tensionMin) * 100, 100), 0);
     Serial.print(" ");
     Serial.print(per, DEC);
     Serial.println("%");
